@@ -14,8 +14,8 @@
                android:alpha="0" />
        </KeyFrameSet>
         <OnSwipe
-            motion:touchAnchorId="@+id/backgroundImage"
-            motion:touchAnchorSide="bottom" />
+            motion:dragDirection="dragUp"
+            motion:touchAnchorId="@+id/textScroll" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
