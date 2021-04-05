@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="280dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundImage"
+        android:text="TITLE"
+        android:textSize="26sp"
+        android:gravity="center" />
+
+    <ScrollView
+        android:id="@+id/textScroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/textScrollContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Разработкой платформы мы занялись… случайно. Всё началось с пандемии, из-за которой правительство Люксембурга и распорядилось создать сервис онлайн-консультаций с врачами. Чтобы выжать из платформы максимум пользы, в неё решили добавить всё, что только нужно для полноценной работы врачей с пациентами. Обмен всевозможными медицинскими документами и даже выдача рецептов на лекарства исключениями не стали — старый вендор всё и сразу заложил в сервис. А затем, чтобы всё добро было в сохранности, к нам и обратились с уже готовым продуктом — нам всего-то и требовалось, что развернуть платформу в защищённой точке присутствия облака.
+
+            Через полтора месяца сервис успешно работал в люксембургском дата-центре EDH Tier IV, но ещё при первом знакомстве мы признали в нём слабое звено всего проекта: в отличие от точки присутствия, платформа защищённостью похвастаться не могла и обладала десятком других недостатков. Решение было очевидным — сервис нужно было делать с нуля. Оставалась убедить в этом правительство Люксембурга.
+Разработкой платформы мы занялись… случайно. Всё началось с пандемии, из-за которой правительство Люксембурга и распорядилось создать сервис онлайн-консультаций с врачами. Чтобы выжать из платформы максимум пользы, в неё решили добавить всё, что только нужно для полноценной работы врачей с пациентами. Обмен всевозможными медицинскими документами и даже выдача рецептов на лекарства исключениями не стали — старый вендор всё и сразу заложил в сервис. А затем, чтобы всё добро было в сохранности, к нам и обратились с уже готовым продуктом — нам всего-то и требовалось, что развернуть платформу в защищённой точке присутствия облака.
+
+            Через полтора месяца сервис успешно работал в люксембургском дата-центре EDH Tier IV, но ещё при первом знакомстве мы признали в нём слабое звено всего проекта: в отличие от точки присутствия, платформа защищённостью похвастаться не могла и обладала десятком других недостатков. Решение было очевидным — сервис нужно было делать с нуля. Оставалась убедить в этом правительство Люксембурга.
+" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
