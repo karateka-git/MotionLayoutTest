@@ -10,22 +10,39 @@
        <KeyFrameSet>
            <KeyAttribute
                motion:motionTarget="@+id/backgroundImage"
-               motion:framePosition="100"
-               android:alpha="0" />
+               motion:framePosition="100" />
+           <KeyAttribute
+               android:rotation="90"
+               motion:framePosition="0"
+               motion:motionTarget="@id/textTitle" />
+
        </KeyFrameSet>
         <OnSwipe
             motion:dragDirection="dragUp"
             motion:touchAnchorId="@+id/textScroll"
-            motion:maxAcceleration="100" />
+            motion:onTouchUp="stop"
+            motion:moveWhenScrollAtTop="true"
+            motion:maxAcceleration="20" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/backgroundImage"
+            android:layout_width="0dp"
+            android:layout_height="280dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
             android:layout_height="1dp"
             android:layout_width="match_parent"
-            android:id="@+id/backgroundImage" />
+            android:id="@+id/backgroundImage"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+        </Constraint>
     </ConstraintSet>
 </MotionScene>
