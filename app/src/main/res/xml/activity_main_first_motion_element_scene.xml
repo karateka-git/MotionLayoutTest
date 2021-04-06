@@ -15,7 +15,8 @@
        </KeyFrameSet>
         <OnSwipe
             motion:dragDirection="dragUp"
-            motion:touchAnchorId="@+id/textScroll" />
+            motion:touchAnchorId="@+id/textScroll"
+            motion:maxAcceleration="100" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
