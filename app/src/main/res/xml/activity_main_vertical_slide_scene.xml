@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@+id/swipeTop"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnSwipe
+            motion:touchRegionId="@id/topCard"
+            motion:dragDirection="dragUp"
+            motion:onTouchUp="autoComplete"
+            motion:touchAnchorId="@+id/topCard" />
+    </Transition>
+
+<!--    <Transition-->
+<!--        motion:constraintSetStart="@id/start"-->
+<!--        motion:constraintSetEnd="@+id/topCardClick"-->
+<!--        motion:duration="1000" >-->
+<!--        <OnClick-->
+<!--            motion:touchRegionId="@id/topCard"-->
+<!--            motion:targetId="@+id/topCard" />-->
+<!--    </Transition>-->
+
+    <Transition
+        motion:constraintSetStart="@id/swipeTop"
+        motion:constraintSetEnd="@+id/end"
+        motion:autoTransition="animateToEnd"
+        motion:duration="150">
+    </Transition>
+
+    <Transition
+        motion:constraintSetStart="@id/end"
+        motion:constraintSetEnd="@+id/start"
+        motion:duration="1000">
+        <KeyFrameSet>
+        </KeyFrameSet>
+        <OnSwipe
+            motion:dragDirection="dragDown"
+            motion:onTouchUp="autoComplete" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/topCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/topCardClick">
+        <Constraint
+            android:id="@id/topCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/swipeTop" >
+        <Constraint
+            android:id="@id/topCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-150dp"
+            android:layout_marginBottom="200dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/topCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-1500dp"
+            android:layout_marginBottom="1000dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            motion:layout_constraintBottom_toTopOf="parent" />
+    </ConstraintSet>
+</MotionScene>
